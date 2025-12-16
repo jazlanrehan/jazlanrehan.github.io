@@ -1,0 +1,14 @@
+/* TEAM */
+  Developer: Jazlan Rehan
+  Site: https://jazlanrehan.github.io
+  LinkedIn: https://www.linkedin.com/in/jazlanrehan/
+  Location: Faisalabad, Pakistan
+  
+/* THANKS */
+  Bootstrap, Tailwind CSS, jQuery, Owl Carousel
+  
+/* SITE */
+  Last update: 2025/12/13
+  Language: English
+  Doctype: HTML5
+  IDE: VS Code
