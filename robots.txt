@@ -6,7 +6,6 @@ Disallow: /search/
 Crawl-delay: 2
 
 Sitemap: https://jazlanrehan.github.io/sitemap.xml
-Host: https://jazlanrehan.github.io
 
 # Google-specific
 User-agent: Googlebot
