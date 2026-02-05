@@ -1377,7 +1377,7 @@ ul#contact_tabs li.active a {
   content: "";
   width: 100%;
   height: 100%;
-  background-color: red;
+  background-color: #f41a4a;
   border: 1px solid #e9e6ef;
   position: absolute;
   z-index: -1;
