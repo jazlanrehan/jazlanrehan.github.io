@@ -8,7 +8,7 @@
   Bootstrap, Tailwind CSS, jQuery, Owl Carousel
   
 /* SITE */
-  Last update: 2025/12/13
+  Last update: 2026/06/26
   Language: English
   Doctype: HTML5
   IDE: VS Code

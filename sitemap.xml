@@ -4,71 +4,71 @@
   <!-- Main Pages -->
   <url>
     <loc>https://jazlanrehan.github.io/</loc>
-    <lastmod>2026-02-06T00:00:00+00:00</lastmod>
+    <lastmod>2026-07-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>https://jazlanrehan.github.io/about.html</loc>
-    <lastmod>2026-02-06T00:00:00+00:00</lastmod>
+    <lastmod>2026-07-15T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://jazlanrehan.github.io/services.html</loc>
-    <lastmod>2026-02-06T00:00:00+00:00</lastmod>
+    <lastmod>2026-07-15T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://jazlanrehan.github.io/resume.html</loc>
-    <lastmod>2026-02-06T00:00:00+00:00</lastmod>
+    <lastmod>2026-07-15T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
     
   <url>
     <loc>https://jazlanrehan.github.io/blog.html</loc>
-    <lastmod>2026-02-06T00:00:00+00:00</lastmod>
+    <lastmod>2026-07-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://jazlanrehan.github.io/contact.html</loc>
-    <lastmod>2026-02-06T00:00:00+00:00</lastmod>
+    <lastmod>2026-07-15T00:00:00+00:00</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   
   <!-- Legal Pages -->
   <url>
     <loc>https://jazlanrehan.github.io/disclaimer.html</loc>
-    <lastmod>2026-02-06T00:00:00+00:00</lastmod>
+    <lastmod>2026-07-15T00:00:00+00:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   
   <url>
     <loc>https://jazlanrehan.github.io/dmca.html</loc>
-    <lastmod>2026-02-06T00:00:00+00:00</lastmod>
+    <lastmod>2026-07-15T00:00:00+00:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   
   <url>
     <loc>https://jazlanrehan.github.io/privacy.html</loc>
-    <lastmod>2026-02-06T00:00:00+00:00</lastmod>
+    <lastmod>2026-07-15T00:00:00+00:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   
   <url>
     <loc>https://jazlanrehan.github.io/terms.html</loc>
-    <lastmod>2026-02-06T00:00:00+00:00</lastmod>
+    <lastmod>2026-07-15T00:00:00+00:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -76,17 +76,73 @@
   <!-- Project Pages -->
   <url>
     <loc>https://jazlanrehan.github.io/projects/on-page-seo-optimization.html</loc>
-    <lastmod>2026-02-06T00:00:00+00:00</lastmod>
+    <lastmod>2026-07-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://jazlanrehan.github.io/projects/business-website-redesign.html</loc>
+    <lastmod>2026-07-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://jazlanrehan.github.io/projects/landing-page-development.html</loc>
+    <lastmod>2026-07-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://jazlanrehan.github.io/projects/off-page-seo-link-building.html</loc>
+    <lastmod>2026-07-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://jazlanrehan.github.io/projects/meta-ads-campaign.html</loc>
+    <lastmod>2026-07-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://jazlanrehan.github.io/projects/google-ads-campaign.html</loc>
+    <lastmod>2026-07-15T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <!-- Blog Posts -->
   <url>
-    <loc>https://jazlanrehan.github.io/posts/what-is-amazon-fba-and-how-does-it-work.html</loc>
-    <lastmod>2026-02-06T00:00:00+00:00</lastmod>
+    <loc>https://jazlanrehan.github.io/posts/what-is-web-development-and-how-does-it-work.html</loc>
+    <lastmod>2026-07-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jazlanrehan.github.io/posts/meta-ads-vs-google-ads.html</loc>
+    <lastmod>2026-07-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jazlanrehan.github.io/posts/best-seo-strategy-for-ecommerce-website.html</loc>
+    <lastmod>2026-07-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jazlanrehan.github.io/posts/what-is-seo-and-how-does-it-work.html</loc>
+    <lastmod>2026-07-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   
 </urlset>

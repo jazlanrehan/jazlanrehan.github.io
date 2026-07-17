@@ -1,3 +1,168 @@
+/* =========================================================
+   Preflight (Tailwind v3 base reset, replicated manually)
+   This is the global base reset that Tailwind's CDN runtime
+   normally injects automatically. Since the project no longer
+   depends on the Tailwind CDN script, this reset is written
+   out directly so every element sizes and behaves exactly as
+   it did before (box-sizing: border-box everywhere, default
+   margins removed, headings/lists unstyled, etc.) Without this
+   section, padding/border start adding to element widths
+   instead of being included in them, and several elements pick
+   up browser default spacing that Tailwind normally strips.
+   ========================================================= */
+*, ::before, ::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
+}
+html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  max-width: 100%;
+}
+body {
+  margin: 0;
+  line-height: inherit;
+  overflow-x: hidden;
+  padding-right: 0 !important;
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 400;
+  color: #777;
+  line-height: 26px;
+  letter-spacing: 0.02rem;
+}
+hr {
+  height: 0;
+  color: inherit;
+  border-top-width: 1px;
+}
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+b, strong {
+  font-weight: bolder;
+}
+code, kbd, samp, pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 1em;
+}
+small {
+  font-size: 80%;
+}
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+table {
+  text-indent: 0;
+  border-color: inherit;
+  border-collapse: collapse;
+}
+button, input, optgroup, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
+button, select {
+  text-transform: none;
+}
+button, [type="button"], [type="reset"], [type="submit"] {
+  -webkit-appearance: button;
+  background-color: transparent;
+  background-image: none;
+}
+:-moz-focusring {
+  outline: auto;
+}
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+progress {
+  vertical-align: baseline;
+}
+::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+  height: auto;
+}
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+summary {
+  display: list-item;
+}
+blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
+  margin: 0;
+}
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+legend {
+  padding: 0;
+}
+ol, ul, menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+textarea {
+  resize: vertical;
+}
+input::placeholder, textarea::placeholder {
+  opacity: 1;
+  color: #9ca3af;
+}
+button, [role="button"] {
+  cursor: pointer;
+}
+:disabled {
+  cursor: default;
+}
+img, svg, video, canvas, audio, iframe, embed, object {
+  display: block;
+  vertical-align: middle;
+}
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+[hidden] {
+  display: none;
+}
+
 /*-----------------------------------------------------------------------------------
 
 Item Name: Biox - Personal Portfolio HTML Tailwind CSS Template.
@@ -152,16 +317,6 @@ Copyright 2024
 /* veriabal */
 /* components ( Import components ) */
 /* common */
-body {
-  padding-right: 0 !important;
-  font-family: "Montserrat";
-  font-size: 14px;
-  font-weight: 400;
-  color: #777;
-  line-height: 26px;
-  letter-spacing: 0.02rem;
-  overflow: auto !important;
-}
 
 ::-moz-selection {
   color: #f41a4a;
@@ -432,10 +587,6 @@ h4, h5, h6 {
           justify-content: left;
 }
 
-.dark-mode {
-  display: none;
-}
-
 .white-mode {
   display: inline;
 }
@@ -563,83 +714,6 @@ h4, h5, h6 {
 /* footer */
 .bix-footer-contact .logo-links a:hover i {
   color: #fff;
-}
-
-/* tools-sidebar */
-.bix-tools-sidebar .bix-tools-detail::-webkit-scrollbar {
-  background-color: transparent;
-  width: 7px;
-  height: 7px;
-  position: absolute;
-  background-color: #f41a4a;
-}
-.bix-tools-sidebar .bix-tools-detail::-webkit-scrollbar-thumb {
-  background-color: #f41a4a;
-  border-radius: 5px;
-}
-.bix-tools-sidebar .bix-tools-detail .bix-tools-block .bix-tools-rtl .active-mode,
-.bix-tools-sidebar .bix-tools-detail .bix-tools-block .bix-tools-rtl .active-dark-mode,
-.bix-tools-sidebar .bix-tools-detail .bix-tools-block .bix-tools-dark .active-mode,
-.bix-tools-sidebar .bix-tools-detail .bix-tools-block .bix-tools-dark .active-dark-mode {
-  position: relative;
-}
-.bix-tools-sidebar .bix-tools-detail .bix-tools-block .bix-tools-rtl .active-mode:after,
-.bix-tools-sidebar .bix-tools-detail .bix-tools-block .bix-tools-rtl .active-dark-mode:after,
-.bix-tools-sidebar .bix-tools-detail .bix-tools-block .bix-tools-dark .active-mode:after,
-.bix-tools-sidebar .bix-tools-detail .bix-tools-block .bix-tools-dark .active-dark-mode:after {
-  content: "\eb79";
-  width: 30px;
-  height: 30px;
-  font-size: 16px;
-  font-family: "remixicon" !important;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  border-radius: 10px;
-  background-color: #111a24;
-  color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-.bix-tools-sidebar .bix-tools-detail .bix-tools-block .bix-tools-rtl .active-mode img,
-.bix-tools-sidebar .bix-tools-detail .bix-tools-block .bix-tools-rtl .active-dark-mode img,
-.bix-tools-sidebar .bix-tools-detail .bix-tools-block .bix-tools-dark .active-mode img,
-.bix-tools-sidebar .bix-tools-detail .bix-tools-block .bix-tools-dark .active-dark-mode img {
-  border-color: #f41a4a;
-}
-
-.active-variant {
-  position: relative;
-}
-.active-variant:after {
-  font-family: "remixicon" !important;
-  content: "\eb79";
-  height: 35px;
-  width: 35px;
-  font-size: 18px;
-  position: absolute;
-  color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.open-tools {
-  -webkit-transform: translateX(0) !important;
-          transform: translateX(0) !important;
 }
 
 /* Layouts ( Import Layouts ) */
@@ -1168,8 +1242,7 @@ ul#contact_tabs li.active a {
 }
 
 .bix-modal {
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: none;
 }
 
 .bix-overflow-hidden {
@@ -1323,11 +1396,8 @@ ul#contact_tabs li.active a {
 }
 
 .skill-box-contact p {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  display: block;
+  overflow: visible;
 }
 
 .bix-skill .skill-inner-box:hover .skill-logo {
@@ -1430,4 +1500,1009 @@ ul#contact_tabs li.active a {
 
 .blink-highlight {
   animation: blink 0.5s ease-in-out 10; /* 12 toggles = 6 blinks */
+}
+/* =========================================================
+   Custom Overrides (merged from custom.css)
+   ========================================================= */
+/* =========================================================
+   Hire Me modal — centered, single-column, clean
+   ========================================================= */
+
+/* The overlay wrapper — JS sets display:flex on open, display:none on close */
+.bix-modal {
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 16px;
+    transform: none !important;
+}
+
+/* The dialog box itself */
+.bix-modal-dialog {
+    position: relative;
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    border-radius: 28px;
+    overflow: visible;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+}
+
+/* Close button */
+.bix-modal-close-x {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 6;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid #eae8ef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    line-height: 1;
+    color: #111a24;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.bix-modal-close-x:hover {
+    background: #f41a4a;
+    border-color: #f41a4a;
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+/* Form column now fills the full dialog */
+.bix-modal-form-col {
+    width: 100%;
+    padding: 52px 40px 36px;
+}
+.bix-modal-form-col .modal-content,
+.bix-modal-form-col .modal-body {
+    display: block;
+    width: 100%;
+}
+
+/* Right info column — hidden (removed from HTML but just in case) */
+.bix-modal-info-col {
+    display: none !important;
+}
+
+/* WhatsApp button inside the button row */
+.bix-review-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+/* WhatsApp button explicit styling — colors set directly so this never depends
+   on the Tailwind build having generated the bg-[#25d366] / border-[#25d366]
+   utility classes (which were missing from the compiled stylesheet) */
+a.bix-whatsapp-prefill {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    background-color: #25d366 !important;
+    border-color: #25d366 !important;
+    color: #fff !important;
+}
+a.bix-whatsapp-prefill:hover {
+    background-color: #1da851 !important;
+    border-color: #1da851 !important;
+    color: #fff !important;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 575px) {
+    .bix-modal {
+        padding: 12px;
+        align-items: center;
+    }
+    .bix-modal-dialog {
+        max-width: 100%;
+        overflow: visible;
+        border-radius: 20px;
+        width: 100%;
+    }
+    .bix-modal-form-col {
+        padding: 48px 20px 28px;
+    }
+    .bix-modal-close-x {
+        top: 12px;
+        right: 12px;
+        width: 34px;
+        height: 34px;
+        font-size: 20px;
+    }
+    .bix-review-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .bix-review-buttons .bix-button,
+    .bix-review-buttons a.bix-button {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+/* =========================================================
+   Back to top button - now positioned ABOVE the WhatsApp button
+   (was below it before), slightly larger, and brought lower on
+   mobile so it isn't stuck too high up the screen
+   ========================================================= */
+.back-to-top {
+    width: 44px !important;
+    height: 44px !important;
+    right: 20px !important;
+    bottom: 76px !important;
+}
+.back-to-top:hover{
+    background:#f41a4a;
+    color:#fff;
+    box-shadow:0 10px 25px rgba(244,26,74,.35);
+}
+.back-to-top i {
+    font-size: 24px !important;
+    line-height: 44px !important;
+}
+.back-to-top-wrap svg {
+    width: 44px !important;
+    height: 44px !important;
+    right: 20px !important;
+    bottom: 76px !important;
+}
+@media screen and (max-width: 575px) {
+    .back-to-top {
+        right: 14px !important;
+        bottom: 68px !important;
+    }
+    .back-to-top-wrap svg {
+        right: 14px !important;
+        bottom: 68px !important;
+    }
+}
+
+
+.bix-dropdown {
+    position: relative;
+    width: 100%;
+    font-family: "Montserrat", sans-serif;
+}
+
+.bix-dropdown-toggle {
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    border: 1px solid #eae8ef;
+    outline: 0;
+    border-radius: 20px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-size: 14px;
+    color: #111a24;
+    transition: all 0.3s ease-in-out;
+    user-select: none;
+}
+
+.bix-dropdown-toggle:hover,
+.bix-dropdown.open .bix-dropdown-toggle {
+    border-color: #f41a4a;
+}
+
+.bix-dropdown-toggle .bix-dropdown-icon {
+    transition: transform 0.25s ease-in-out;
+    font-size: 18px;
+    color: #495461;
+    flex-shrink: 0;
+    margin-left: 8px;
+}
+
+.bix-dropdown.open .bix-dropdown-toggle .bix-dropdown-icon {
+    transform: rotate(180deg);
+    color: #f41a4a;
+}
+
+.bix-dropdown-toggle .bix-dropdown-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.bix-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #eae8ef;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(17, 26, 36, 0.12);
+    z-index: 60;
+    max-height: 240px;
+    overflow-y: auto;
+    padding: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: all 0.2s ease-in-out;
+}
+
+.bix-dropdown.open .bix-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.bix-dropdown-option {
+    padding: 10px 14px;
+    border-radius: 14px;
+    font-size: 14px;
+    color: #111a24;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.bix-dropdown-option:hover,
+.bix-dropdown-option.active {
+    background: #f41a4a;
+    color: #fff;
+}
+
+.bix-dropdown-option + .bix-dropdown-option {
+    margin-top: 2px;
+}
+
+/* =========================================================
+   WhatsApp floating quick-contact button
+   ========================================================= */
+.bix-whatsapp-float {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 10;
+    width: 45px;
+    height: 45px;
+    background: #f41a4a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.45);
+    transition: all 0.3s ease-in-out;
+}
+
+.bix-whatsapp-float:hover {
+    transform: scale(1.08);
+    background: #25d366;
+
+}
+
+.bix-whatsapp-float i {
+    color: #fff;
+    font-size: 26px;
+}
+
+@media screen and (max-width: 575px) {
+    .bix-whatsapp-float {
+        right: 14px;
+        bottom: 16px;
+        width: 44px;
+        height: 44px;
+    }
+    .bix-whatsapp-float i {
+        font-size: 22px;
+    }
+}
+
+/* =========================================================
+   Form submit status message
+   ========================================================= */
+.bix-form-status {
+    margin-top: 12px;
+    padding: 12px 15px;
+    border-radius: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    text-align: center;
+    display: none;
+}
+
+.bix-form-status.success {
+    display: block;
+    background: #d6ffd5;
+    color: #1c6b1a;
+    border: 1px solid #b4eab2;
+}
+
+.bix-form-status.error {
+    display: block;
+    background: #ffd5df;
+    color: #a31432;
+    border: 1px solid #f5b5c4;
+}
+
+.bix-form-status.sending {
+    display: block;
+    background: #d5f5ff;
+    color: #145a73;
+    border: 1px solid #aee6f7;
+}
+
+/* Hire modal quick-contact divider */
+.bix-or-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 16px 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    color: #999;
+}
+.bix-or-divider::before,
+.bix-or-divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #eae8ef;
+}
+.bix-or-divider span {
+    padding: 0 12px;
+}
+
+.bix-whatsapp-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    height: 50px;
+    background: #25d366;
+    color: #fff;
+    border-radius: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+.bix-whatsapp-button:hover {
+    background: #1ebc59;
+    color: #fff;
+}
+.bix-whatsapp-button i {
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   Equal Height Columns Fix
+   Makes card grids (services, projects, blog, skills) have
+   equal-height columns regardless of content length. Flex
+   row children stretch by default; we just need the visible
+   card inside each column to fill that stretched height.
+   ========================================================= */
+.bix-services,
+.bix-project-card,
+.bix-blog-box,
+.skill-inner-box {
+    height: 100%;
+}
+
+.bix-project-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.bix-project-card .project-image {
+    flex: 1 1 auto;
+}
+
+@media (min-width: 1200px) {
+    .bix-blog-box {
+        flex-direction: row;
+    }
+}
+/* =========================================================
+   Generated utility CSS (replaces Tailwind CDN JIT classes)
+   Each Tailwind arbitrary-value class used in the HTML now
+   has a real static CSS rule below, so no Tailwind runtime
+   is required. Class names in HTML are unchanged.
+   ========================================================= */
+.absolute { position: absolute; }
+.bg-\[\#00000080\] { background-color: #00000080; }
+.bg-\[\#000000cc\] { background-color: #000000cc; }
+.bg-\[\#0009\] { background-color: #0009; }
+.bg-\[\#111a24\] { background-color: #111a24; }
+.bg-\[\#d5f5ff\] { background-color: #d5f5ff; }
+.bg-\[\#d6ffd5\] { background-color: #d6ffd5; }
+.bg-\[\#edf4b3\] { background-color: #edf4b3; }
+.bg-\[\#f41a4a\] { background-color: #f41a4a; }
+.bg-\[\#f7f5fb\] { background-color: #f7f5fb; }
+.bg-\[\#f8f6fc\] { background-color: #f8f6fc; }
+.bg-\[\#faf1c6\] { background-color: #faf1c6; }
+.bg-\[\#ffd5df\] { background-color: #ffd5df; }
+.bg-\[\#fff\] { background-color: #fff; }
+.bg-\[url\(\'\.\.\/assets\/img\/breadcrumb\/bg\.jpg\'\)\] { background-image: url('../img/breadcrumb/bg.jpg'); }
+.bg-\[url\(\'assets\/img\/breadcrumb\/bg\.jpg\'\)\] { background-image: url('../img/breadcrumb/bg.jpg'); }
+.bg-\[url\(\'assets\/img\/hire\/bg\.png\'\)\] { background-image: url('../img/hire/bg.png'); }
+.bg-blend-overlay { background-blend-mode: overlay; }
+.bg-center { background-position: center; }
+.bg-cover { background-size: cover; }
+.bg-no-repeat { background-repeat: no-repeat; }
+.bg-transparent { background-color: transparent; }
+.block { display: block; }
+.blur-\[3px\] { filter: blur(3px); }
+.border-\[\#111a24\] { border-color: #111a24; }
+.border-\[\#1b1c20\] { border-color: #1b1c20; }
+.border-\[\#eae8ef\] { border-color: #eae8ef; }
+.border-\[\#f41a4a\] { border-color: #f41a4a; }
+.border-\[0\] { border-width: 0px; }
+.border-\[1px\] { border-width: 1px; }
+.border-b-\[1px\] { border-bottom-width: 1px; }
+.border-l-\[0\.5px\] { border-left-width: 0.5px; }
+.border-r-\[0\.5px\] { border-right-width: 0.5px; }
+.border-solid { border-style: solid; }
+.bottom-\[0\] { bottom: 0px; }
+.bottom-\[8px\] { bottom: 8px; }
+.capitalize { text-transform: capitalize; }
+.cursor-default { cursor: default; }
+.cursor-pointer { cursor: pointer; }
+.duration-300 { transition-duration: 300ms; }
+.duration-\[0\.25s\] { transition-duration: 0.25s; }
+.duration-\[0\.3s\] { transition-duration: 0.3s; }
+.ease-in-out { transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+.ease-out { transition-timing-function: cubic-bezier(0, 0, 0.2, 1); }
+.fill-current { fill: currentColor; }
+.fill-transparent { fill: transparent; }
+.filter { filter: var(--tw-filter, none); }
+.fixed { position: fixed; }
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.font-black { font-weight: 900; }
+.font-bold { font-weight: 700; }
+.font-light { font-weight: 300; }
+.font-medium { font-weight: 500; }
+.font-normal { font-weight: 400; }
+.font-semibold { font-weight: 600; }
+.gap-1\.5 { gap: 0.375rem; }
+.gap-\[6px\] { gap: 6px; }
+.h-\[130px\] { height: 130px; }
+.h-\[150px\] { height: 150px; }
+.h-\[18px\] { height: 18px; }
+.h-\[30px\] { height: 30px; }
+.h-\[31px\] { height: 31px; }
+.h-\[35px\] { height: 35px; }
+.h-\[40px\] { height: 40px; }
+.h-\[50px\] { height: 50px; }
+.h-\[60px\] { height: 60px; }
+.h-\[70px\] { height: 70px; }
+.h-\[800px\] { height: 800px; }
+.h-\[80px\] { height: 80px; }
+.h-\[calc\(100\%-30px\)\] { height: calc(100% - 30px); }
+.h-\[calc\(100\%-50px\)\] { height: calc(100% - 50px); }
+.h-auto { height: auto; }
+.h-full { height: 100%; }
+.h-screen { height: 100vh; }
+.hidden { display: none; }
+.inline { display: inline; }
+.inline-block { display: inline-block; }
+.inline-flex { display: inline-flex; }
+.inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.justify-end { justify-content: flex-end; }
+.justify-left { justify-content: left; }
+.justify-start { justify-content: flex-start; }
+.leading-\[1\.25\] { line-height: 1.25; }
+.leading-\[1\.2\] { line-height: 1.2; }
+.leading-\[1\.3\] { line-height: 1.3; }
+.leading-\[16px\] { line-height: 16px; }
+.leading-\[1\] { line-height: 1; }
+.leading-\[20px\] { line-height: 20px; }
+.leading-\[22px\] { line-height: 22px; }
+.leading-\[24px\] { line-height: 24px; }
+.leading-\[26px\] { line-height: 26px; }
+.leading-\[30px\] { line-height: 30px; }
+.leading-\[32px\] { line-height: 32px; }
+.leading-\[40px\] { line-height: 40px; }
+.leading-none { line-height: 1; }
+.left-0 { left: 0; }
+.left-\[-82px\] { left: -82px; }
+.left-\[0\] { left: 0px; }
+.left-\[150px\] { left: 150px; }
+.left-\[20px\] { left: 20px; }
+.left-\[50px\] { left: 50px; }
+.left-\[8px\] { left: 8px; }
+.list-disc { list-style-type: disc; }
+.list-none { list-style-type: none; }
+.m-\[-10px\] { margin: -10px; }
+.m-\[0\] { margin: 0px; }
+.m-\[10px\] { margin: 10px; }
+.m-\[5px\] { margin: 5px; }
+.m-auto { margin: auto; }
+.max-w-\[100px\] { max-width: 100px; }
+.max-w-\[700px\] { max-width: 700px; }
+.max-w-\[900px\] { max-width: 900px; }
+.mb-\[-24px\] { margin-bottom: -24px; }
+.mb-\[-30px\] { margin-bottom: -30px; }
+.mb-\[0\] { margin-bottom: 0px; }
+.mb-\[10px\] { margin-bottom: 10px; }
+.mb-\[110px\] { margin-bottom: 110px; }
+.mb-\[12px\] { margin-bottom: 12px; }
+.mb-\[14px\] { margin-bottom: 14px; }
+.mb-\[15px\] { margin-bottom: 15px; }
+.mb-\[16px\] { margin-bottom: 16px; }
+.mb-\[20px\] { margin-bottom: 20px; }
+.mb-\[24px\] { margin-bottom: 24px; }
+.mb-\[2px\] { margin-bottom: 2px; }
+.mb-\[30px\] { margin-bottom: 30px; }
+.mb-\[4px\] { margin-bottom: 4px; }
+.mb-\[50px\] { margin-bottom: 50px; }
+.mb-\[6px\] { margin-bottom: 6px; }
+.mb-\[8px\] { margin-bottom: 8px; }
+.ml-2 { margin-left: 0.5rem; }
+.ml-\[20px\] { margin-left: 20px; }
+.ml-\[30px\] { margin-left: 30px; }
+.mr-\[10px\] { margin-right: 10px; }
+.mt-\[-175px\] { margin-top: -175px; }
+.mt-\[-30px\] { margin-top: -30px; }
+.mt-\[-7px\] { margin-top: -7px; }
+.mt-\[100px\] { margin-top: 100px; }
+.mt-\[10px\] { margin-top: 10px; }
+.mt-\[150px\] { margin-top: 150px; }
+.mt-\[16px\] { margin-top: 16px; }
+.mt-\[24px\] { margin-top: 24px; }
+.mt-\[30px\] { margin-top: 30px; }
+.mt-\[40px\] { margin-top: 40px; }
+.mt-\[4px\] { margin-top: 4px; }
+.mt-\[50px\] { margin-top: 50px; }
+.mt-\[53px\] { margin-top: 53px; }
+.mt-auto { margin-top: auto; }
+.mx-\[-12px\] { margin-left: -12px; margin-right: -12px; }
+.mx-\[20px\] { margin-left: 20px; margin-right: 20px; }
+.mx-\[5px\] { margin-left: 5px; margin-right: 5px; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.my-\[20px\] { margin-top: 20px; margin-bottom: 20px; }
+.my-\[50px\] { margin-top: 50px; margin-bottom: 50px; }
+.opacity-\[0\.045\] { opacity: 0.045; }
+.opacity-\[0\.15\] { opacity: 0.15; }
+.opacity-\[0\.5\] { opacity: 0.5; }
+.opacity-\[0\.7\] { opacity: 0.7; }
+.opacity-\[0\.8\] { opacity: 0.8; }
+.opacity-\[0\] { opacity: 0; }
+.origin-center { transform-origin: center; }
+.outline-\[0\] { outline: 0; }
+.overflow-auto { overflow: auto; }
+.overflow-hidden { overflow: hidden; }
+.p-\[0\] { padding: 0px; }
+.p-\[1\.25rem\] { padding: 1.25rem; }
+.p-\[10px\] { padding: 10px; }
+.p-\[15px\] { padding: 15px; }
+.p-\[20px\] { padding: 20px; }
+.p-\[24px\] { padding: 24px; }
+.p-\[30px\] { padding: 30px; }
+.p-\[40px\] { padding: 40px; }
+.p-\[5px\] { padding: 5px; }
+.pb-\[100px\] { padding-bottom: 100px; }
+.pb-\[20px\] { padding-bottom: 20px; }
+.pb-\[30px\] { padding-bottom: 30px; }
+.pb-\[50px\] { padding-bottom: 50px; }
+.pl-\[0\] { padding-left: 0px; }
+.pl-\[15px\] { padding-left: 15px; }
+.pl-\[200px\] { padding-left: 200px; }
+.pl-\[20px\] { padding-left: 20px; }
+.pl-\[2rem\] { padding-left: 2rem; }
+.pl-\[30px\] { padding-left: 30px; }
+.pr-\[2\.05rem\] { padding-right: 2.05rem; }
+.pr-\[30px\] { padding-right: 30px; }
+.pt-\[100px\] { padding-top: 100px; }
+.pt-\[15px\] { padding-top: 15px; }
+.pt-\[170px\] { padding-top: 170px; }
+.pt-\[24px\] { padding-top: 24px; }
+.pt-\[50px\] { padding-top: 50px; }
+.px-\[10px\] { padding-left: 10px; padding-right: 10px; }
+.px-\[12px\] { padding-left: 12px; padding-right: 12px; }
+.px-\[15px\] { padding-left: 15px; padding-right: 15px; }
+.px-\[16px\] { padding-left: 16px; padding-right: 16px; }
+.px-\[20px\] { padding-left: 20px; padding-right: 20px; }
+.px-\[24px\] { padding-left: 24px; padding-right: 24px; }
+.px-\[26px\] { padding-left: 26px; padding-right: 26px; }
+.px-\[2px\] { padding-left: 2px; padding-right: 2px; }
+.px-\[30px\] { padding-left: 30px; padding-right: 30px; }
+.py-\[10px\] { padding-top: 10px; padding-bottom: 10px; }
+.py-\[11px\] { padding-top: 11px; padding-bottom: 11px; }
+.py-\[120px\] { padding-top: 120px; padding-bottom: 120px; }
+.py-\[12px\] { padding-top: 12px; padding-bottom: 12px; }
+.py-\[13px\] { padding-top: 13px; padding-bottom: 13px; }
+.py-\[30px\] { padding-top: 30px; padding-bottom: 30px; }
+.py-\[3px\] { padding-top: 3px; padding-bottom: 3px; }
+.py-\[50px\] { padding-top: 50px; padding-bottom: 50px; }
+.py-\[5px\] { padding-top: 5px; padding-bottom: 5px; }
+.py-\[80px\] { padding-top: 80px; padding-bottom: 80px; }
+.py-\[8px\] { padding-top: 8px; padding-bottom: 8px; }
+.relative { position: relative; }
+.resize-none { resize: none; }
+.right-\[-7px\] { right: -7px; }
+.right-\[-82px\] { right: -82px; }
+.right-\[0\] { right: 0px; }
+.right-\[15px\] { right: 15px; }
+.right-\[16px\] { right: 16px; }
+.right-\[20px\] { right: 20px; }
+.right-\[250px\] { right: 250px; }
+.right-\[30px\] { right: 30px; }
+.right-\[500px\] { right: 500px; }
+.right-\[60px\] { right: 60px; }
+.right-\[80px\] { right: 80px; }
+.right-auto { right: auto; }
+.rotate-\[-10deg\] { transform: rotate(-10deg); }
+.rotate-\[-12deg\] { transform: rotate(-12deg); }
+.rotate-\[-15deg\] { transform: rotate(-15deg); }
+.rotate-\[10deg\] { transform: rotate(10deg); }
+.rotate-\[270deg\] { transform: rotate(270deg); }
+.rotate-\[5deg\] { transform: rotate(5deg); }
+.rounded-\[0\] { border-radius: 0px; }
+.rounded-\[100px\] { border-radius: 100px; }
+.rounded-\[10px\] { border-radius: 10px; }
+.rounded-\[15px\] { border-radius: 15px; }
+.rounded-\[200px\] { border-radius: 200px; }
+.rounded-\[20px\] { border-radius: 20px; }
+.rounded-\[25px\] { border-radius: 25px; }
+.rounded-\[30px\] { border-radius: 30px; }
+.rounded-\[50\%\] { border-radius: 50%; }
+.rounded-\[50px\] { border-radius: 50px; }
+.rounded-bl-\[20px\] { border-bottom-left-radius: 20px; }
+.rounded-br-\[20px\] { border-bottom-right-radius: 20px; }
+.rounded-l-\[20px\] { border-top-left-radius: 20px; border-bottom-left-radius: 20px; }
+.rounded-t-\[20px\] { border-top-left-radius: 20px; border-top-right-radius: 20px; }
+.rounded-tl-\[20px\] { border-top-left-radius: 20px; }
+.rounded-tr-\[20px\] { border-top-right-radius: 20px; }
+.sticky { position: sticky; }
+.stroke-\[\#f41a4a\] { stroke: #f41a4a; }
+.stroke-\[5px\] { stroke-width: 5px; }
+.text-\[\#111a24\] { color: #111a24; }
+.text-\[\#1b1c20\] { color: #1b1c20; }
+.text-\[\#495461\] { color: #495461; }
+.text-\[\#555\] { color: #555; }
+.text-\[\#777\] { color: #777; }
+.text-\[\#999\] { color: #999; }
+.text-\[\#f41a4a\] { color: #f41a4a; }
+.text-\[\#ff0000\] { color: #ff0000; }
+.text-\[\#fff\] { color: #fff; }
+.text-\[1\.25rem\] { font-size: 1.25rem; }
+.text-\[10px\] { font-size: 10px; }
+.text-\[12px\] { font-size: 12px; }
+.text-\[13px\] { font-size: 13px; }
+.text-\[14px\] { font-size: 14px; }
+.text-\[15px\] { font-size: 15px; }
+.text-\[16px\] { font-size: 16px; }
+.text-\[17px\] { font-size: 17px; }
+.text-\[18px\] { font-size: 18px; }
+.text-\[1rem\] { font-size: 1rem; }
+.text-\[200px\] { font-size: 200px; }
+.text-\[20px\] { font-size: 20px; }
+.text-\[22px\] { font-size: 22px; }
+.text-\[24px\] { font-size: 24px; }
+.text-\[26px\] { font-size: 26px; }
+.text-\[27px\] { font-size: 27px; }
+.text-\[30px\] { font-size: 30px; }
+.text-\[32px\] { font-size: 32px; }
+.text-\[35px\] { font-size: 35px; }
+.text-\[36px\] { font-size: 36px; }
+.text-\[37px\] { font-size: 37px; }
+.text-\[42px\] { font-size: 42px; }
+.text-\[78px\] { font-size: 78px; }
+.text-\[calc\(1\.275rem\+\.3vw\)\] { font-size: calc(1.275rem + .3vw); }
+.text-center { text-align: center; }
+.text-ellipsis { text-overflow: ellipsis; }
+.top-0 { top: 0; }
+.top-\[-100px\] { top: -100px; }
+.top-\[-30px\] { top: -30px; }
+.top-\[-54px\] { top: -54px; }
+.top-\[0\] { top: 0px; }
+.top-\[50px\] { top: 50px; }
+.top-\[8px\] { top: 8px; }
+.top-\[90px\] { top: 90px; }
+.tracking-\[0\.02rem\] { letter-spacing: 0.02rem; }
+.tracking-\[0\.03rem\] { letter-spacing: 0.03rem; }
+.tracking-\[0\.08rem\] { letter-spacing: 0.08rem; }
+.tracking-\[1\.3px\] { letter-spacing: 1.3px; }
+.transition-all { transition-property: all; transition-duration: 150ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+.transition-colors { transition-property: color, background-color, border-color; transition-duration: 150ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+.translate-x-\[-100\%\] { transform: translateX(-100%); }
+.underline { text-decoration: underline; }
+.w-\[0\] { width: 0px; }
+.w-\[100px\] { width: 100px; }
+.w-\[120px\] { width: 120px; }
+.w-\[130px\] { width: 130px; }
+.w-\[150px\] { width: 150px; }
+.w-\[18px\] { width: 18px; }
+.w-\[200px\] { width: 200px; }
+.w-\[28px\] { width: 28px; }
+.w-\[300px\] { width: 300px; }
+.w-\[30px\] { width: 30px; }
+.w-\[31px\] { width: 31px; }
+.w-\[35px\] { width: 35px; }
+.w-\[40px\] { width: 40px; }
+.w-\[50\%\] { width: 50%; }
+.w-\[50px\] { width: 50px; }
+.w-\[60px\] { width: 60px; }
+.w-\[70px\] { width: 70px; }
+.w-\[80px\] { width: 80px; }
+.w-\[90px\] { width: 90px; }
+.w-\[calc\(100\%-300px\)\] { width: calc(100% - 300px); }
+.w-\[calc\(100\%-50px\)\] { width: calc(100% - 50px); }
+.w-\[calc\(100\%-60px\)\] { width: calc(100% - 60px); }
+.w-\[calc\(100\%-90px\)\] { width: calc(100% - 90px); }
+.w-full { width: 100%; }
+.z-\[-1\] { z-index: -1; }
+.z-\[-4\] { z-index: -4; }
+.z-\[0\] { z-index: 0; }
+.z-\[10\] { z-index: 10; }
+.z-\[12\] { z-index: 12; }
+.z-\[1\] { z-index: 1; }
+.z-\[20\] { z-index: 20; }
+.z-\[3\] { z-index: 3; }
+.z-\[42\] { z-index: 42; }
+.z-\[43\] { z-index: 43; }
+.z-\[45\] { z-index: 45; }
+.z-\[50\] { z-index: 50; }
+.z-\[51\] { z-index: 51; }
+.z-\[5\] { z-index: 5; }
+.focus\:border-\[\#f41a4a\]:focus { border-color: #f41a4a; }
+.focus\:outline-none:focus { outline: none; }
+.hover\:bg-\[\#111a24\]:hover { background-color: #111a24; }
+.hover\:bg-\[\#f41a4a\]:hover { background-color: #f41a4a; }
+.hover\:bg-\[\#fff\]:hover { background-color: #fff; }
+.hover\:border-\[\#111a24\]:hover { border-color: #111a24; }
+.hover\:border-\[\#1b1c20\]:hover { border-color: #1b1c20; }
+.hover\:border-\[\#f41a4a\]:hover { border-color: #f41a4a; }
+.hover\:pl-\[5px\]:hover { padding-left: 5px; }
+.hover\:text-\[\#f41a4a\]:hover { color: #f41a4a; }
+.hover\:text-\[\#fff\]:hover { color: #fff; }
+.hover\:underline:hover { text-decoration: underline; }
+@media (min-width: 576px) {
+  .min-\[576px\]\:max-w-\[540px\] { max-width: 540px; }
+  .min-\[576px\]\:w-\[50\%\] { width: 50%; }
+}
+@media (min-width: 768px) {
+  .min-\[768px\]\:max-w-\[720px\] { max-width: 720px; }
+  .min-\[768px\]\:w-\[33\.33\%\] { width: 33.33%; }
+  .min-\[768px\]\:w-\[50\%\] { width: 50%; }
+  .min-\[768px\]\:w-\[66\.66\%\] { width: 66.66%; }
+}
+@media (min-width: 992px) {
+  .min-\[992px\]\:flex-row { flex-direction: row; }
+  .min-\[992px\]\:hidden { display: none; }
+  .min-\[992px\]\:max-w-\[960px\] { max-width: 960px; }
+  .min-\[992px\]\:w-\[100\%\] { width: 100%; }
+  .min-\[992px\]\:w-\[33\.33\%\] { width: 33.33%; }
+  .min-\[992px\]\:w-\[50\%\] { width: 50%; }
+  .min-\[992px\]\:w-\[66\.66\%\] { width: 66.66%; }
+}
+@media (min-width: 1200px) {
+  .min-\[1200px\]\:max-w-\[1140px\] { max-width: 1140px; }
+  .min-\[1200px\]\:w-\[25\%\] { width: 25%; }
+  .min-\[1200px\]\:w-\[33\.33\%\] { width: 33.33%; }
+  .min-\[1200px\]\:w-\[41\.66\%\] { width: 41.66%; }
+  .min-\[1200px\]\:w-\[58\.33\%\] { width: 58.33%; }
+  .min-\[1200px\]\:w-\[75\%\] { width: 75%; }
+}
+@media (min-width: 1400px) {
+  .min-\[1400px\]\:max-w-\[1320px\] { max-width: 1320px; }
+}
+@media (max-width: 1399px) {
+  .max-\[1399px\]\:bottom-\[120px\] { bottom: 120px; }
+  .max-\[1399px\]\:h-\[40px\] { height: 40px; }
+  .max-\[1399px\]\:h-\[50px\] { height: 50px; }
+  .max-\[1399px\]\:h-\[60px\] { height: 60px; }
+  .max-\[1399px\]\:left-\[10px\] { left: 10px; }
+  .max-\[1399px\]\:left-\[90px\] { left: 90px; }
+  .max-\[1399px\]\:max-w-\[800px\] { max-width: 800px; }
+  .max-\[1399px\]\:right-\[200px\] { right: 200px; }
+  .max-\[1399px\]\:right-auto { right: auto; }
+  .max-\[1399px\]\:text-\[14px\] { font-size: 14px; }
+  .max-\[1399px\]\:text-\[17px\] { font-size: 17px; }
+  .max-\[1399px\]\:text-\[24px\] { font-size: 24px; }
+  .max-\[1399px\]\:text-\[28px\] { font-size: 28px; }
+  .max-\[1399px\]\:text-\[32px\] { font-size: 32px; }
+  .max-\[1399px\]\:text-\[38px\] { font-size: 38px; }
+  .max-\[1399px\]\:text-\[70px\] { font-size: 70px; }
+  .max-\[1399px\]\:top-\[-100px\] { top: -100px; }
+  .max-\[1399px\]\:top-\[-120px\] { top: -120px; }
+  .max-\[1399px\]\:top-\[-70px\] { top: -70px; }
+  .max-\[1399px\]\:w-\[40px\] { width: 40px; }
+  .max-\[1399px\]\:w-\[50px\] { width: 50px; }
+  .max-\[1399px\]\:w-\[60px\] { width: 60px; }
+  .max-\[1399px\]\:w-\[calc\(100\%-260px\)\] { width: calc(100% - 260px); }
+}
+@media (max-width: 1199px) {
+  .max-\[1199px\]\:flex-col { flex-direction: column; }
+  .max-\[1199px\]\:h-auto { height: auto; }
+  .max-\[1199px\]\:hidden { display: none; }
+  .max-\[1199px\]\:left-\[0\] { left: 0px; }
+  .max-\[1199px\]\:left-\[10px\] { left: 10px; }
+  .max-\[1199px\]\:m-\[0\] { margin: 0px; }
+  .max-\[1199px\]\:m-auto { margin: auto; }
+  .max-\[1199px\]\:max-w-fit { max-width: fit-content; }
+  .max-\[1199px\]\:mb-\[0\] { margin-bottom: 0px; }
+  .max-\[1199px\]\:mb-\[10px\] { margin-bottom: 10px; }
+  .max-\[1199px\]\:mb-\[25px\] { margin-bottom: 25px; }
+  .max-\[1199px\]\:ml-\[0\] { margin-left: 0px; }
+  .max-\[1199px\]\:mr-\[0\] { margin-right: 0px; }
+  .max-\[1199px\]\:mt-\[0\] { margin-top: 0px; }
+  .max-\[1199px\]\:order-1 { order: 1; }
+  .max-\[1199px\]\:order-2 { order: 2; }
+  .max-\[1199px\]\:order-3 { order: 3; }
+  .max-\[1199px\]\:pl-\[0\] { padding-left: 0px; }
+  .max-\[1199px\]\:relative { position: relative; }
+  .max-\[1199px\]\:right-\[0\] { right: 0px; }
+  .max-\[1199px\]\:text-\[20px\] { font-size: 20px; }
+  .max-\[1199px\]\:text-\[22px\] { font-size: 22px; }
+  .max-\[1199px\]\:text-\[28px\] { font-size: 28px; }
+  .max-\[1199px\]\:text-\[32px\] { font-size: 32px; }
+  .max-\[1199px\]\:text-\[34px\] { font-size: 34px; }
+  .max-\[1199px\]\:text-\[52px\] { font-size: 52px; }
+  .max-\[1199px\]\:top-\[0\] { top: 0px; }
+  .max-\[1199px\]\:w-\[calc\(100\%-215px\)\] { width: calc(100% - 215px); }
+  .max-\[1199px\]\:w-auto { width: auto; }
+  .max-\[1199px\]\:w-full { width: 100%; }
+}
+@media (max-width: 992px) {
+  .max-\[992px\]\:flex-nowrap { flex-wrap: nowrap; }
+}
+@media (max-width: 991px) {
+  .max-\[991px\]\:bottom-\[250px\] { bottom: 250px; }
+  .max-\[991px\]\:bottom-auto { bottom: auto; }
+  .max-\[991px\]\:flex { display: flex; }
+  .max-\[991px\]\:h-auto { height: auto; }
+  .max-\[991px\]\:hidden { display: none; }
+  .max-\[991px\]\:items-center { align-items: center; }
+  .max-\[991px\]\:justify-start { justify-content: flex-start; }
+  .max-\[991px\]\:left-\[0\] { left: 0px; }
+  .max-\[991px\]\:left-\[100px\] { left: 100px; }
+  .max-\[991px\]\:mb-\[40px\] { margin-bottom: 40px; }
+  .max-\[991px\]\:mb-\[4px\] { margin-bottom: 4px; }
+  .max-\[991px\]\:mr-\[15px\] { margin-right: 15px; }
+  .max-\[991px\]\:mt-\[15px\] { margin-top: 15px; }
+  .max-\[991px\]\:mt-\[95px\] { margin-top: 95px; }
+  .max-\[991px\]\:my-\[40px\] { margin-top: 40px; margin-bottom: 40px; }
+  .max-\[991px\]\:pb-\[30px\] { padding-bottom: 30px; }
+  .max-\[991px\]\:pb-\[40px\] { padding-bottom: 40px; }
+  .max-\[991px\]\:pb-\[80px\] { padding-bottom: 80px; }
+  .max-\[991px\]\:pt-\[20px\] { padding-top: 20px; }
+  .max-\[991px\]\:pt-\[40px\] { padding-top: 40px; }
+  .max-\[991px\]\:pt-\[80px\] { padding-top: 80px; }
+  .max-\[991px\]\:py-\[40px\] { padding-top: 40px; padding-bottom: 40px; }
+  .max-\[991px\]\:right-\[50px\] { right: 50px; }
+  .max-\[991px\]\:right-auto { right: auto; }
+  .max-\[991px\]\:text-\[130px\] { font-size: 130px; }
+  .max-\[991px\]\:text-\[15px\] { font-size: 15px; }
+  .max-\[991px\]\:text-\[18px\] { font-size: 18px; }
+  .max-\[991px\]\:text-\[20px\] { font-size: 20px; }
+  .max-\[991px\]\:text-\[28px\] { font-size: 28px; }
+  .max-\[991px\]\:text-left { text-align: left; }
+  .max-\[991px\]\:top-\[-150px\] { top: -150px; }
+  .max-\[991px\]\:top-\[-20px\] { top: -20px; }
+  .max-\[991px\]\:top-\[-80px\] { top: -80px; }
+  .max-\[991px\]\:top-\[30px\] { top: 30px; }
+  .max-\[991px\]\:w-\[calc\(100\%-400px\)\] { width: calc(100% - 400px); }
+}
+@media (max-width: 767px) {
+  .max-\[767px\]\:block { display: block; }
+  .max-\[767px\]\:border-\[0\] { border-width: 0px; }
+  .max-\[767px\]\:flex { display: flex; }
+  .max-\[767px\]\:flex-col { flex-direction: column; }
+  .max-\[767px\]\:hidden { display: none; }
+  .max-\[767px\]\:justify-center { justify-content: center; }
+  .max-\[767px\]\:leading-\[28px\] { line-height: 28px; }
+  .max-\[767px\]\:left-\[0\] { left: 0px; }
+  .max-\[767px\]\:left-\[45px\] { left: 45px; }
+  .max-\[767px\]\:max-w-\[430px\] { max-width: 430px; }
+  .max-\[767px\]\:max-w-\[80px\] { max-width: 80px; }
+  .max-\[767px\]\:max-w-full { max-width: 100%; }
+  .max-\[767px\]\:mb-\[-24px\] { margin-bottom: -24px; }
+  .max-\[767px\]\:mb-\[20px\] { margin-bottom: 20px; }
+  .max-\[767px\]\:mb-\[24px\] { margin-bottom: 24px; }
+  .max-\[767px\]\:mb-\[35px\] { margin-bottom: 35px; }
+  .max-\[767px\]\:mb-\[4px\] { margin-bottom: 4px; }
+  .max-\[767px\]\:mt-\[12px\] { margin-top: 12px; }
+  .max-\[767px\]\:mx-auto { margin-left: auto; margin-right: auto; }
+  .max-\[767px\]\:my-\[0\] { margin-top: 0px; margin-bottom: 0px; }
+  .max-\[767px\]\:my-\[35px\] { margin-top: 35px; margin-bottom: 35px; }
+  .max-\[767px\]\:p-\[0\] { padding: 0px; }
+  .max-\[767px\]\:pb-\[35px\] { padding-bottom: 35px; }
+  .max-\[767px\]\:pb-\[70px\] { padding-bottom: 70px; }
+  .max-\[767px\]\:pl-\[0\] { padding-left: 0px; }
+  .max-\[767px\]\:pt-\[15px\] { padding-top: 15px; }
+  .max-\[767px\]\:pt-\[35px\] { padding-top: 35px; }
+  .max-\[767px\]\:pt-\[70px\] { padding-top: 70px; }
+  .max-\[767px\]\:py-\[100px\] { padding-top: 100px; padding-bottom: 100px; }
+  .max-\[767px\]\:py-\[35px\] { padding-top: 35px; padding-bottom: 35px; }
+  .max-\[767px\]\:right-auto { right: auto; }
+  .max-\[767px\]\:rotate-\[0\] { transform: rotate(0deg); }
+  .max-\[767px\]\:rounded-bl-\[0\] { border-bottom-left-radius: 0px; }
+  .max-\[767px\]\:rounded-tr-\[20px\] { border-top-right-radius: 20px; }
+  .max-\[767px\]\:text-\[14px\] { font-size: 14px; }
+  .max-\[767px\]\:text-\[18px\] { font-size: 18px; }
+  .max-\[767px\]\:text-\[20px\] { font-size: 20px; }
+  .max-\[767px\]\:text-\[24px\] { font-size: 24px; }
+  .max-\[767px\]\:text-\[28px\] { font-size: 28px; }
+  .max-\[767px\]\:text-\[34px\] { font-size: 34px; }
+  .max-\[767px\]\:text-\[38px\] { font-size: 38px; }
+  .max-\[767px\]\:text-center { text-align: center; }
+  .max-\[767px\]\:top-\[-13px\] { top: -13px; }
+  .max-\[767px\]\:w-\[calc\(100\%-250px\)\] { width: calc(100% - 250px); }
+  .max-\[767px\]\:w-full { width: 100%; }
+}
+@media (max-width: 575px) {
+  .max-\[575px\]\:bottom-\[20px\] { bottom: 20px; }
+  .max-\[575px\]\:h-\[120px\] { height: 120px; }
+  .max-\[575px\]\:justify-center { justify-content: center; }
+  .max-\[575px\]\:leading-\[25px\] { line-height: 25px; }
+  .max-\[575px\]\:m-auto { margin: auto; }
+  .max-\[575px\]\:max-w-\[320px\] { max-width: 320px; }
+  .max-\[575px\]\:mb-\[0\] { margin-bottom: 0px; }
+  .max-\[575px\]\:p-\[15px\] { padding: 15px; }
+  .max-\[575px\]\:p-\[20px\] { padding: 20px; }
+  .max-\[575px\]\:pt-\[15px\] { padding-top: 15px; }
+  .max-\[575px\]\:px-\[15px\] { padding-left: 15px; padding-right: 15px; }
+  .max-\[575px\]\:py-\[80px\] { padding-top: 80px; padding-bottom: 80px; }
+  .max-\[575px\]\:right-\[20px\] { right: 20px; }
+  .max-\[575px\]\:text-\[100px\] { font-size: 100px; }
+  .max-\[575px\]\:text-\[14px\] { font-size: 14px; }
+  .max-\[575px\]\:text-\[16px\] { font-size: 16px; }
+  .max-\[575px\]\:text-\[18px\] { font-size: 18px; }
+  .max-\[575px\]\:text-\[22px\] { font-size: 22px; }
+  .max-\[575px\]\:text-\[24px\] { font-size: 24px; }
+  .max-\[575px\]\:text-\[28px\] { font-size: 28px; }
+  .max-\[575px\]\:text-center { text-align: center; }
+  .max-\[575px\]\:w-\[120px\] { width: 120px; }
+  .max-\[575px\]\:w-\[210px\] { width: 210px; }
+}
+@media (max-width: 480px) {
+  .max-\[480px\]\:bottom-\[0\] { bottom: 0px; }
+  .max-\[480px\]\:flex-col { flex-direction: column; }
+  .max-\[480px\]\:h-\[calc\(100\%-20px\)\] { height: calc(100% - 20px); }
+  .max-\[480px\]\:justify-center { justify-content: center; }
+  .max-\[480px\]\:left-\[20px\] { left: 20px; }
+  .max-\[480px\]\:mb-\[8px\] { margin-bottom: 8px; }
+  .max-\[480px\]\:p-\[0\] { padding: 0px; }
+  .max-\[480px\]\:pb-\[20px\] { padding-bottom: 20px; }
+  .max-\[480px\]\:px-\[20px\] { padding-left: 20px; padding-right: 20px; }
+  .max-\[480px\]\:right-\[20px\] { right: 20px; }
+  .max-\[480px\]\:text-center { text-align: center; }
+  .max-\[480px\]\:top-\[0\] { top: 0px; }
+  .max-\[480px\]\:w-\[calc\(100\%-40px\)\] { width: calc(100% - 40px); }
+}
+@media (max-width: 460px) {
+  .max-\[460px\]\:text-\[70px\] { font-size: 70px; }
+}
+@media (max-width: 420px) {
+  .max-\[420px\]\:bottom-\[0\] { bottom: 0px; }
+  .max-\[420px\]\:flex-col { flex-direction: column; }
+  .max-\[420px\]\:right-\[0\] { right: 0px; }
+  .max-\[420px\]\:rounded-\[50px\] { border-radius: 50px; }
+  .max-\[420px\]\:text-\[22px\] { font-size: 22px; }
+  .max-\[420px\]\:w-full { width: 100%; }
+}
+@media (max-width: 380px) {
+  .max-\[380px\]\:flex-col { flex-direction: column; }
+  .max-\[380px\]\:mb-\[15px\] { margin-bottom: 15px; }
+  .max-\[380px\]\:mr-\[0\] { margin-right: 0px; }
+  .max-\[380px\]\:text-center { text-align: center; }
+}
+@media (max-width: 320px) {
+  .max-\[320px\]\:flex-col { flex-direction: column; }
+  .max-\[320px\]\:pl-\[0\] { padding-left: 0px; }
+  .max-\[320px\]\:pt-\[15px\] { padding-top: 15px; }
+  .max-\[320px\]\:w-full { width: 100%; }
 }

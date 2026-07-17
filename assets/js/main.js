@@ -12,6 +12,34 @@
         once: true,
     });
 
+    /* Recalculate AOS trigger offsets once the page (including images
+       and fonts) has fully finished loading. AOS.init() above runs as
+       soon as this script executes, which can be before final layout
+       has settled - elements positioned after images/dynamic content
+       can then keep a stale offset and never receive "aos-animate".
+       If the page already finished loading by the time this script
+       runs (common on fast loads), refresh immediately; otherwise wait
+       for the "load" event. */
+    function refreshAosOffsets() {
+        if (window.AOS) {
+            setTimeout(function () {
+                AOS.refreshHard();
+                /* refreshHard() only recalculates each element's trigger
+                   offset; it does not itself re-check which elements are
+                   currently visible. Dispatching a scroll event makes
+                   AOS's own scroll listener immediately re-evaluate
+                   visibility against the corrected offsets, so already-
+                   visible elements that were missed get animated in. */
+                window.dispatchEvent(new Event("scroll"));
+            }, 0);
+        }
+    }
+    if (document.readyState === "complete") {
+        refreshAosOffsets();
+    } else {
+        $(window).on("load", refreshAosOffsets);
+    }
+
     /* Header fixed */
     $(function () {
         var header = $(".bix-static");
@@ -140,19 +168,23 @@
 
     /*----------- modal ----------------*/
     $(".bix-modal-toggle").on("click", function () {
+        $('.bix-sidebar-overlay').fadeOut();
+        $('.bix-mobile-menu').removeClass("bix-menu-open");
         $(".bix-modal-overlay").fadeIn();
-        $(".bix-modal").fadeIn();
+        $(".bix-modal").css({ display: "flex", alignItems: "center", justifyContent: "center", opacity: 0 }).animate({ opacity: 1 }, 300);
         $("body").addClass("bix-overflow-hidden")
-        $(".bix-modal-dialog").addClass("bix-fadeOutUp");
-        $(".bix-modal-dialog").removeClass("bix-fadeInDown");
+        $(".bix-modal-dialog").addClass("bix-fadeInDown");
+        $(".bix-modal-dialog").removeClass("bix-fadeOutUp");
     });
 
     $(".bix-close-modal, .bix-modal-overlay").on("click", function () {
         $(".bix-modal-overlay").fadeOut();
-        $(".bix-modal").fadeOut();
+        $(".bix-modal").animate({ opacity: 0 }, 200, function () {
+            $(this).css("display", "none");
+        });
         $("body").removeClass("bix-overflow-hidden")
-        $(".bix-modal-dialog").removeClass("bix-fadeOutUp");
-        $(".bix-modal-dialog").addClass("bix-fadeInDown");
+        $(".bix-modal-dialog").removeClass("bix-fadeInDown");
+        $(".bix-modal-dialog").addClass("bix-fadeOutUp");
     });
 
     /* Achievement tabs */
@@ -187,12 +219,17 @@
     $("#contact_tabs li:nth-child(1)").addClass("active");
     $(".tab-contact-pane").hide();
     $(".tab-contact-pane:nth-child(1)").show();
+    var bixContactFormMap = { "#freelancer": "#contact-form", "#job": "#job-form" };
     $("#contact_tabs li").click(function () {
         $("#contact_tabs li").removeClass("active");
         $(this).addClass("active");
         $(".tab-contact-pane").hide();
         var activeTab = $(this).find("a").attr("href");
         $(activeTab).fadeIn();
+        var targetForm = bixContactFormMap[activeTab];
+        if (targetForm) {
+            $(".bix-modal-whatsapp-cta").attr("data-form", targetForm);
+        }
         return false;
     });
 
@@ -238,113 +275,6 @@
     /* Date */
     var date = new Date().getFullYear();
     document.getElementById("copyright_year").innerHTML = date;
-
-    /* Tools Sidebar */
-    $('.bix-tools-sidebar-toggle').on("click", function () {
-        $('.bix-tools-sidebar').addClass("open-tools");
-        $('.bix-tools-sidebar-overlay').fadeIn();
-        $('.bix-tools-sidebar-toggle').hide();
-    });
-    $('.bix-tools-sidebar-overlay, .close-tools').on("click", function () {
-        $('.bix-tools-sidebar').removeClass("open-tools");
-        $('.bix-tools-sidebar-overlay').fadeOut();
-        $('.bix-tools-sidebar-toggle').fadeIn();
-    });
-
-    /* color show */
-    $(".bix-color li").on("click", function () {
-        $("li").removeClass("active-variant");
-        $(this).addClass("active-variant");
-    });
-
-    $(".color-primary").on("click", function () {
-        $("#add_class").remove();
-    });
-
-    $(".color-1").on("click", function () {
-        $("#add_class").remove();
-        $("head").append(
-            '<link rel="stylesheet" href="assets/css/color-1.css" id="add_class">'
-        );
-    });
-    $(".color-2").on("click", function () {
-        $("#add_class").remove();
-        $("head").append(
-            '<link rel="stylesheet" href="assets/css/color-2.css" id="add_class">'
-        );
-    });
-    $(".color-3").on("click", function () {
-        $("#add_class").remove();
-        $("head").append(
-            '<link rel="stylesheet" href="assets/css/color-3.css" id="add_class">'
-        );
-    });
-    $(".color-4").on("click", function () {
-        $("#add_class").remove();
-        $("head").append(
-            '<link rel="stylesheet" href="assets/css/color-4.css" id="add_class">'
-        );
-    });
-    $(".color-5").on("click", function () {
-        $("#add_class").remove();
-        $("head").append(
-            '<link rel="stylesheet" href="assets/css/color-5.css" id="add_class">'
-        );
-    });
-    $(".color-6").on("click", function () {
-        $("#add_class").remove();
-        $("head").append(
-            '<link rel="stylesheet" href="assets/css/color-6.css" id="add_class">'
-        );
-    });
-    $(".color-7").on("click", function () {
-        $("#add_class").remove();
-        $("head").append(
-            '<link rel="stylesheet" href="assets/css/color-7.css" id="add_class">'
-        );
-    });
-    $(".color-8").on("click", function () {
-        $("#add_class").remove();
-        $("head").append(
-            '<link rel="stylesheet" href="assets/css/color-8.css" id="add_class">'
-        );
-    });
-    $(".color-9").on("click", function () {
-        $("#add_class").remove();
-        $("head").append(
-            '<link rel="stylesheet" href="assets/css/color-9.css" id="add_class">'
-        );
-    });
-
-    /* RTL-LTR Modes */
-    $(".bix-tools-rtl .bix-tools-item").on("click", function () {
-        $(".active-mode").removeClass("active-mode");
-        $(this).addClass("active-mode");
-    });
-    $(".ltr").on("click", function () {
-        $("#add_rtl").remove();
-    });
-    $(".rtl").on("click", function () {
-        $("#add_rtl").remove();
-        $("head").append(
-            '<link rel="stylesheet" href="assets/css/rtl.css" id="add_rtl">'
-        );
-    });
-
-    /*Dark Light Modes */
-    $(".bix-tools-dark .bix-tools-item").on("click", function () {
-        $(".active-dark-mode").removeClass("active-dark-mode");
-        $(this).addClass("active-dark-mode");
-    });
-    $(".light").on("click", function () {
-        $("#add_dark").remove();
-    });
-    $(".dark").on("click", function () {
-        $("#add_dark").remove();
-        $("head").append(
-            '<link rel="stylesheet" href="assets/css/dark.css" id="add_dark">'
-        );
-    });
 
     var forEach = function (array, callback, scope) {
         for (var i = 0; i < array.length; i++) {
